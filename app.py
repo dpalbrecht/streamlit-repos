@@ -15,14 +15,10 @@ def analyze():
     }
     st.session_state['count'] += 1
     with st.spinner('Understanding barks...'):
-        time.sleep(3)
+        # time.sleep(3)
         st.write(messages[st.session_state['count']], unsafe_allow_html=True)
         if st.session_state['count'] == 4:
-            cols = st.columns([3,1,3])
-            with cols[1]:
-                st.image('image.jpg', width=224)
-            st.balloons()
-            st.balloons()
+            st.image('image.jpg', use_column_width=True)
             st.balloons()
     if st.session_state['count'] == 4:
         st.session_state['count'] = 0

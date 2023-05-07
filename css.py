@@ -10,12 +10,12 @@ def load_css():
             padding-top: 2rem;
         }
         div.h1 {
-            font-size: 60px;
+            font-size: 30px;
             font-weight: bold;
             text-align: center;
         }
         div.h4 {
-            font-size: 20px;
+            font-size: 15px;
             text-align: center;
             padding-bottom: 50px;
         }
@@ -28,6 +28,9 @@ def load_css():
             font-size: 30px;
             text-align: center;
         }
+        div.stButton {
+            padding-left: 30%;
+        }
         .stButton button {
                 border: 1px solid transparent;
                 font-size: 30px;
@@ -36,7 +39,7 @@ def load_css():
                 background-color: #007bff;
                 border-color: #007bff;
                 text-align: center;
-                width: 100%;
+                width: 60%;
             }
         .stButton button:hover {
             border: 1px solid transparent;
