@@ -19,6 +19,15 @@ def load_css():
             text-align: center;
             padding-bottom: 50px;
         }
+        div.message {
+            font-size: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+        div.submessage {
+            font-size: 30px;
+            text-align: center;
+        }
         .stButton button {
                 border: 1px solid transparent;
                 font-size: 30px;
@@ -27,6 +36,7 @@ def load_css():
                 background-color: #007bff;
                 border-color: #007bff;
                 text-align: center;
+                width: 100%;
             }
         .stButton button:hover {
             border: 1px solid transparent;
