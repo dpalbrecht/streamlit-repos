@@ -19,7 +19,7 @@ def load_css():
             text-align: center;
             padding-bottom: 50px;
         }
-        div.stButton>button {
+        .stButton button {
                 border: 1px solid transparent;
                 font-size: 30px;
                 border-radius: 0.25rem;
@@ -28,7 +28,7 @@ def load_css():
                 border-color: #007bff;
                 text-align: center;
             }
-        div.stButton>button:hover {
+        .stButton button:hover {
             border: 1px solid transparent;
             font-size: 30px;
             border-radius: 0.25rem;
@@ -36,6 +36,11 @@ def load_css():
             background-color: #383;
             border-color: #007bff;
         }
+        .stButton button:focus {
+                color: #fff !important;
+                border-color: #007bff !important;
+                box-shadow: none;
+            }
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
