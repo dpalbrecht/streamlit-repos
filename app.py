@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+import os
 from css import load_css; load_css()
 
 
@@ -18,8 +19,14 @@ def analyze():
         # time.sleep(3)
         st.write(messages[st.session_state['count']], unsafe_allow_html=True)
         if st.session_state['count'] == 4:
-            st.image('image.jpg', use_column_width=True)
             st.balloons()
+            images = [(n, f'images/{i}') for n, i in \
+                        zip([0,1,2]*100, sorted(os.listdir('images')))]
+            cols = st.columns(3)
+            with st.container():
+                for n, image in images:
+                    with cols[n]:
+                        st.image(image, use_column_width=True)
     if st.session_state['count'] == 4:
         st.session_state['count'] = 0
 
