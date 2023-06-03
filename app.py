@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 import os
+import random
 from css import load_css; load_css()
 
 
@@ -17,16 +18,18 @@ def analyze():
     st.session_state['count'] += 1
     with st.spinner('Understanding barks...'):
         # time.sleep(3)
+        if st.session_state['count'] > 4:
+            st.session_state['count'] = 1
         st.write(messages[st.session_state['count']], unsafe_allow_html=True)
         if st.session_state['count'] == 4:
+            images = os.listdir('images')
+            random.shuffle(images)
+            images = [f'images/{i}' for i in images]
             st.balloons()
-            images = [(n, f'images/{i}') for n, i in \
-                        zip([0,1,2]*100, sorted(os.listdir('images')))]
-            cols = st.columns(3)
-            with st.container():
-                for n, image in images:
-                    with cols[n]:
-                        st.image(image, use_column_width=True)
+            with st.empty():
+                for image in images:
+                    st.image(image, use_column_width=True)
+                    time.sleep(0.5)
     if st.session_state['count'] == 4:
         st.session_state['count'] = 0
 
